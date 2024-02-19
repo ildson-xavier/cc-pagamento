@@ -1,0 +1,45 @@
+server:
+  port: 8081
+  servlet:
+    encoding:
+      charset: UTF-8
+
+logging:
+  level:
+    root: INFO
+
+spring:
+  application:
+    name: cc-pagamento
+
+  web: 
+    locale-resolver: fixed
+    locale: pt_BR
+    
+api:
+  pagamento: 
+    url: https://sandbox.melhorenvio.com.br/api/v2/me/shipment/calculate
+    apikey: $aact_YTU5YTE0M2M2N2I4MTliNzk0YTI5N2U5MzdjNWZmNDQ6OjAwMDAwMDAwMDAwMDAwNzQ1ODM6OiRhYWNoXzVkOGJhNzU1LTQxZDItNDE1MS1iZTg2LWE1OGUyZDdiYjBlMA==
+    
+
+management: 
+  endpoints:
+    web: 
+      exposure: 
+        include: "*"
+  health: 
+    show-details: always
+
+  
+ ## 1) Faz a cotacao
+ ## 2) Envia para o carrinhoa
+ ## 3) Faz a compra
+ ## 4) Gera a etiqueta
+ ## 5) Faz a impressao da etiqueta 
+    
+ ## https://programmablesearchengine.google.com/controlpanel/overview?cx=8717f8619125a41b6
+ ##https://developers.google.com/custom-search/v1/reference/rest/v1/SearchType?hl=pt-br
+ ##https://developers.google.com/custom-search/v1/reference/rest/v1/cse/list?hl=pt-br&apix_params=%7B%22cx%22%3A%228717f8619125a41b6%22%2C%22num%22%3A10%2C%22q%22%3A%22fone+ouvido+azul+valor+fornecedor%22%2C%22searchType%22%3A%22searchTypeUndefined%22%2C%22start%22%3A71%2C%22alt%22%3A%22json%22%7D
+ ##https://console.cloud.google.com/apis/library/customsearch.googleapis.com?hl=pt-br&project=cc-pesquisa-prod-1706812715955
+ ##https://console.cloud.google.com/apis/api/customsearch.googleapis.com/quotas?hl=pt-br&project=cc-pesquisa-prod-1706812715955&pageState=(%22allQuotasTable%22:(%22f%22:%22%255B%255D%22))
+ 
